@@ -1,0 +1,316 @@
+*,*:after,*:before{
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    font-family:arial;
+    font-size: 16px;
+  }
+  img{
+    max-width: 100%;
+    margin-top: 20px;
+} 
+  #header{
+    background: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .header-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0277A3;
+    color: white;
+    width: 100%;
+    max-height: 50px;
+  }
+  .header-top h5{
+    font-size: 15px;
+    font-weight: bold;
+  }
+.header-left{
+    margin-left: 30px;
+}
+.header-right{
+    margin-left: 50px;
+}
+  .container{
+    max-width: 1100px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav_ico{
+    display: block;
+    width: 40px;
+    cursor: pointer;
+  }
+  .main_nav {
+    float: right;
+  }
+  .main_nav ul{
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+  }
+  .main_nav ul li{
+    float: left;
+    margin: 0 0 0 5px;
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    position: relative;
+  }
+  .main_nav ul li a {
+    color: gray;
+    display: block;
+    line-height: 1.4;
+    text-decoration: none;
+    padding: 5px 15px;
+    transition: all 0.3s ease-out;
+  }
+  .main_nav ul li:hover > a{
+    color: #0a91da
+  }
+  .main_nav ul li i{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    color: #fff;
+  }
+  .main_nav ul li:hover > i{ color: #0a91da }
+  
+  .main_nav ul ul{
+    position: absolute;
+    left: 0;
+    top:calc(100% + 15px);
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    pointer-events: none;
+  }
+  .main_nav ul ul li{
+    float: none;
+    margin:0;
+    border-bottom: 1px solid #fff;
+  }
+  .main_nav > ul > li > ul:after{
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    height: 16px;
+    width: 100%;
+    left: 0;
+  }
+  
+  .main_nav ul ul ul{
+    left: 100%;
+    top:0;
+  }
+  .main_nav ul li:hover > ul{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .main_nav ul ul li a{
+    background: #090F31;
+  }
+  .main_nav ul li:hover ul li:hover > a{
+    color: #fff;
+    background: #0277A3;
+  }
+  .main_nav ul ul li i{
+    transform: rotate(-90deg);
+  }
+  .main_nav ul ul li:hover i{ color: #fff; }
+  
+  
+  
+  
+  @media only screen and (min-width:768px) and (max-width:991px){
+    .main_nav ul li{ margin: 0 ; font-size: 16px; }
+    .main_nav ul li a{ padding: 5px 10px; }
+  
+  }
+  
+  @media screen and (min-width: 768px){
+    .nav_ico,
+    #menuTrigger{  display: none;} 
+  }
+  @media screen and (max-width: 767px){
+    .nav_ico{ 
+      display: block;
+      position: relative;
+      z-index: 10;
+      color: #0277A3;
+      font-size: 36px;
+  
+    } 
+    .main_nav {
+      position: fixed;
+      left: 0;
+      top: 72px;
+      padding:0;
+      background: #0277A3;
+      z-index: 5;
+      height: calc(100vh - 74px);
+      overflow: auto;
+      width: calc(100% - 80px);
+      transition: all 0.3s ease-out;
+      transform: translateX(-100%);
+    }
+    .main_nav ul li {
+      float: none;
+      margin: 0 !important;
+      padding: 0 !important;
+      border-bottom: 1px solid;
+    }
+    .main_nav ul li a {
+      display: block;
+      color: #fff;
+      padding: 10px;
+    }
+    .main_nav > ul > li:hover > a{
+      background:#0a91da;
+      color: #fff;
+    } 
+    .main_nav ul ul{
+      position: static;
+      pointer-events: auto;
+      opacity: 1;
+      height: 0;
+      overflow: hidden;
+    }
+    .main_nav ul ul li a{
+      padding-left: 30px;
+    }
+    .main_nav ul ul ul li a{
+      padding-left: 60px;
+    }
+    .main_nav ul ul ul ul li a{
+      padding-left: 90px;
+    }
+    .main_nav ul li:hover > ul {
+      height: auto;
+    }
+    .main_nav ul li i{ right: 10px !important; }
+    .main_nav ul li:hover > i{ color: #fff }
+    .main_nav ul ul li i{transform: rotate(0deg);}
+  
+    #menuTrigger{
+      opacity: 0;
+      position: fixed;
+      width: 0;
+      height: 0;
+      margin: 0
+    }
+    #menuTrigger:checked + .main_nav{
+      transform: translateX(0%);
+    }
+  }
+  #userBtn{
+    background-color: #0277A3;
+    color: white;
+    width: 110px;
+    height: 35px;
+    border: 1px solid white;
+    font-size: 15px;
+    cursor: pointer;
+  }
+ 
+
+
+
+  .slider-container {
+    width: 720px;
+    margin: auto;
+    position: relative;
+}
+
+.slider-container .fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+.slider-container .slides .slider-numbers {
+    position: absolute;
+    padding: 15px;
+    font-size: 15px;
+    color: #FFF
+}
+
+.slider-container .slides .slider-caption {
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    color: #FFF;
+    padding: 10px;
+}
+
+.slider-container .prev,
+.slider-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFF;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.slider-container .next {
+    right: 0px;
+}
+
+.slider-container .prev:hover{
+    background: rgba(0, 0, 0, 0.6);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+}
+.slider-container .next:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    cursor: pointer;
+}
+
+.slider-container .slider-bullets {
+    text-align: center;
+}
+
+.slider-container .slider-bullets .dots {
+    display: inline-block;
+    padding: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #808080;
+    border-radius: 50%;
+}
+
+.slider-container .slider-bullets .dots:hover {
+    background-color: #383838;
+    cursor: pointer;
+}
+
+.slider-container .slider-bullets .active {
+    background-color: #383838;
+}
+
+
+
+
+
